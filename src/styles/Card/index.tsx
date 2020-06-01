@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Project = () => {
+export const Card = () => {
 	return (
 		<>
-			<h3>App Project</h3>
+			<h3>Card</h3>
 		</>
 	);
 };

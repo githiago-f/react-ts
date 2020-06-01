@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export default () => {
-    return (
-        <>
-            <h3>Project view</h3>
-        </>
-    )
-}
+export const Home = () => {
+	return (
+		<>
+			<h3>Project view</h3>
+		</>
+	);
+};

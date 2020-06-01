@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from 'routes/index';
+import {Routes} from 'routes/index';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Routes />
-    </React.StrictMode>,
-    document.getElementById('root')
+	<React.StrictMode>
+		<Routes />
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
