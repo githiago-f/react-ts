@@ -30,19 +30,27 @@ const CardImage = styled.img.attrs({
     border-radius: 4px;
 `;
 
+const Button = styled.a.attrs({
+    className: 'btn btn-dark',
+    target: '_blank'
+})`
+    float: right;
+`
+
 export const CardProject: FC<Base<TCard>> = (props) => {
 	return (
 		<Card>
             <CardImage src={assets["default"]}/>
             <CardBody>
-                <span>
-                    <b>{props.title}</b><br/>
+                <h4>{props.title}</h4>
+                <p style={{maxWidth: 380 }}>
                     {props.description}
-                </span><br/>
+                </p>
                 <span>
                     <Badge lang={props.lang}>&nbsp;</Badge>
                     &nbsp;{props.lang}
                 </span>
+                <Button href={props.href}> Ver projeto </Button>
             </CardBody>
         </Card>
 	);
