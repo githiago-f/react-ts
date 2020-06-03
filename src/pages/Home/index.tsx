@@ -27,6 +27,9 @@ export const Home = () => {
             <Row>
                 {cards.map((i, id)=> <CardProject key={id} {...i} />)}
             </Row>
+            <div className='card card-body'>
+            Icons made by <a href="https://creativemarket.com/Becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            </div>
 		</Template>
 	);
 };
