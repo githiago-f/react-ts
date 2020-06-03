@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import assets from 'assets';
 import { Base } from 'types/props';
@@ -24,10 +24,10 @@ const Badge = styled.span.attrs({
     font-size: 50%;
 `;
 
-const CardImage = styled.img.attrs({
-    className: 'img-fluid'
-})`
+const CardImage = styled.img`
     border-radius: 4px;
+    max-height: 267px;
+    max-width: 400;
 `;
 
 const Button = styled.a.attrs({
@@ -38,9 +38,20 @@ const Button = styled.a.attrs({
 `
 
 export const CardProject: FC<Base<TCard>> = (props) => {
+    const [file, setFile] = useState(assets["default"]);
+
+    useEffect(()=> {
+        const keys = Object.keys(assets);
+        if(keys) {
+            if(keys.find(i => i === props.title) !== undefined) {
+                setFile(assets[props.title])
+            }
+        }
+    }, [props.title])
+
 	return (
 		<Card>
-            <CardImage src={assets["default"]}/>
+            <CardImage height="267" width="400" src={file}/>
             <CardBody>
                 <h4>{props.title}</h4>
                 <p style={{maxWidth: 380 }}>

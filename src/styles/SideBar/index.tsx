@@ -13,6 +13,7 @@ export const SideBar = () => {
 				/>
 				<div className="py-3">
 					<div className="py-3">
+                        <h4>Thiago Farias</h4>
 						<a href="https://github.com/githiago-f" target="_blanck">@githiago-f</a>
 					</div>
 					<a
@@ -26,13 +27,15 @@ export const SideBar = () => {
 					<div className="collapse multi-collapse p-2" id="description">
 						<div className="card card-body">
 							<p className="text-left">
-                                Hi, this is my portfolio. <br/>
-                                If you are looking for an expert on React, JavaScript,
-                                TypeScript, Redux, React Native...
-                                I&apos;m probably not the guy.<br/>
-                                But if You are looking for a good developer on those
-                                &nbsp;<s>and a bit more</s>&nbsp;
-                                technologies. Please, get in touch.
+                                Olá, este é meu portifólio.<br/>
+                                Sou um desenvolvedor full-stack com{" "}
+                                vasto conhecimento em desenvolvimento{" "}
+                                web com Html, Bootstrap, CSS,{" "}
+                                JavaScript e ReactJS.{" "}
+                                Também em desenvolvimento de serviços back-end{" "}
+                                com Express.js, Laravel, Adonis.js, entre outros.<br/>
+                                Desenvolvi também aplicações mobile utilizando{" "}
+                                React-Native.
 							</p>
 						</div>
 					</div>
