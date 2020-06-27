@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {ThemeProvider, createGlobalStyle} from 'styled-components';
 import constants from 'styles/theme/constants';
 import { Base } from 'types/props';
@@ -20,6 +20,16 @@ const GlobalStyle = createGlobalStyle<{darkThemeOn: boolean}>`
 export const Provider: React.FC<Base> = (props) => {
 
 	const [darkTheme, setDarkTheme] = useState(true);
+
+	useEffect(() => {
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+			if(e.matches) {
+				setDarkTheme(true);
+			} else {
+				setDarkTheme(false);
+			}
+		});
+	}, []);
 
 	return (
 		<>
