@@ -52,7 +52,7 @@ export const CardProject: FC<Base<TCard>> = (props) => {
 
 	return (
 		<Card>
-			<CardImage height="267" width="400" src={file}/>
+			<CardImage height="267" width="400" src={file} alt={props.title + ' - ' + props.lang}/>
 			<CardBody>
 				<Subtitle>{props.title}</Subtitle>
 				<p style={{maxWidth: 380 }}>
