@@ -5,7 +5,7 @@ import { Home } from 'pages';
 export const Routes = () => {
 	return (
 		<Provider>
-            <Home/>
+			<Home/>
 		</Provider>
 	);
 };

@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Content = styled.div.attrs({
-    className: "col-12 col-sm-12 col-md-9 col-lg-9 bg-light"
+	className: 'col-12 col-sm-12 col-md-9 col-lg-9 ' + ( false ? 'bg-light' : 'bg-darker')
 })`
     padding-top: 3rem;
     min-height: 100vh;
