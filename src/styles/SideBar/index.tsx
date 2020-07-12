@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { SideBarContainer, Description } from './SideBar';
 import {Subtitle} from './../Title';
+import { loadReadme } from 'service/github.api';
+import ReactMarkdown from 'react-markdown';
 
 export const SideBar = () => {
+    const [readme, setReadme] = useState('')
+
+    useEffect(()=> {
+        loadReadme().then(setReadme).catch(console.error)
+    }, [])
+
 	return (
 		<SideBarContainer>
 			<div className="pt-5 p-2">
@@ -19,15 +27,7 @@ export const SideBar = () => {
 					</div>
 					<Description>
 						<p className="text-left">
-                            Olá, este é meu portifólio.<br/>
-                            Sou um desenvolvedor full-stack com{' '}
-                            vasto conhecimento em desenvolvimento{' '}
-                            web com Html, Bootstrap, CSS,{' '}
-                            JavaScript e ReactJS.{' '}
-                            Também em desenvolvimento de serviços back-end{' '}
-                            com Express.js, Laravel, Adonis.js, entre outros.<br/>
-                            Desenvolvi também aplicações mobile utilizando{' '}
-                            React-Native.
+                            <ReactMarkdown source={readme}/>
 						</p>
 					</Description>
 				</div>

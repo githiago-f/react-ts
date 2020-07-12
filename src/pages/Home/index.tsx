@@ -14,11 +14,12 @@ export const Home: FC<Base<{}>> = () => {
 	useEffect(() => {
 		getRepos().then(data => {
 			const myCards = data.map(card => ({
-				lang: card.language.toLowerCase().trim(),
-				description: card.description,
-				title: card.name,
-				href: card.html_url
-			}));
+                        lang: card.language.toLowerCase().trim(),
+                        description: card.description,
+                        title: card.name,
+                        href: card.html_url
+                    })
+                ) as TCard[];
 			setCards(myCards);
 		});
 	}, []);
@@ -27,7 +28,7 @@ export const Home: FC<Base<{}>> = () => {
 		<Template>
 			<Title>Meus projetos</Title>
 			<Row>
-				{cards.map((i, id)=> <CardProject key={id} {...i} />)}
+                {cards.map((i, id)=> <CardProject key={id} {...i} />)}
 			</Row>
 			<Description>
 				<p>
