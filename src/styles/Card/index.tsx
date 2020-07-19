@@ -19,7 +19,7 @@ const CardBody = styled.div`
 `;
 
 const Badge = styled.span.attrs({
-	className: 'badge badge-pill'
+    className: 'badge badge-pill'
 })<ThemeProps & {lang: string}>`
     background-color: ${props => props.theme.colors[props.lang]};
     font-size: 50%;
@@ -32,38 +32,38 @@ const CardImage = styled.img`
 `;
 
 const Button = styled.a.attrs({
-	className: 'btn btn-dark',
-	target: '_blank'
+    className: 'btn btn-dark',
+    target: '_blank'
 })`
     float: right;
 `;
 
 export const CardProject = (props: Base<TCard>) => {
-	const [file, setFile] = useState(assets['default']);
+    const [file, setFile] = useState(assets['default']);
 
-	useEffect(()=> {
-		const keys = Object.keys(assets);
-		if(keys) {
-			if(keys.find(i => i === props.title) !== undefined) {
-				setFile(assets[props.title]);
-			}
-		}
-	}, [props.title]);
+    useEffect(()=> {
+        const keys = Object.keys(assets);
+        if(keys) {
+            if(keys.find(i => i === props.title) !== undefined) {
+                setFile(assets[props.title]);
+            }
+        }
+    }, [props.title]);
 
-	return (
-		<Card>
-			<CardImage className="img-fluid" src={file} alt={props.title + ' - ' + props.lang}/>
-			<CardBody>
-				<Subtitle>{props.title}</Subtitle>
-				<p style={{maxWidth: 380 }}>
-					{props.description}
-				</p>
-				<span>
-					<Badge lang={props.lang}>&nbsp;</Badge>
+    return (
+        <Card>
+            <CardImage className="img-fluid" src={file} alt={props.title + ' - ' + props.lang}/>
+            <CardBody>
+                <Subtitle>{props.title}</Subtitle>
+                <p style={{maxWidth: 380 }}>
+                    {props.description}
+                </p>
+                <span>
+                    <Badge lang={props.lang}>&nbsp;</Badge>
                     &nbsp;{props.lang}
-				</span>
-				<Button href={props.href}> Ver projeto </Button>
-			</CardBody>
-		</Card>
-	);
+                </span>
+                <Button href={props.href}> Ver projeto </Button>
+            </CardBody>
+        </Card>
+    );
 };

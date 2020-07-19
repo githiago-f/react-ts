@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div.attrs({
-	className: 'bg-darker'
+    className: 'bg-darker'
 })`
     padding-top: 3rem;
     min-height: 100vh;

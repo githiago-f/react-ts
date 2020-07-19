@@ -4,14 +4,14 @@ import {Routes} from 'routes/index';
 import * as serviceWorker from './serviceWorker';
 
 const App = () => (
-	<React.StrictMode>
-		<Routes />
-	</React.StrictMode>
+    <React.StrictMode>
+        <Routes />
+    </React.StrictMode>
 );
 
 ReactDOM.render(
-	<App/>,
-	document.getElementById('root')
+    <App/>,
+    document.getElementById('root')
 );
 
 

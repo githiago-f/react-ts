@@ -5,36 +5,36 @@ import { loadReadme } from 'service/github.api';
 import ReactMarkdown from 'react-markdown';
 
 export const SideBar = () => {
-	const [readme, setReadme] = useState('');
+    const [readme, setReadme] = useState('');
 
-	useEffect(()=> {
-		loadReadme().then(setReadme).catch(console.error);
-	}, []);
+    useEffect(()=> {
+        loadReadme().then(setReadme).catch(console.error);
+    }, []);
 
-	return (
-		<SideBarContainer>
-			<div className="pt-5 p-2 text-center">
-				<img
-					src="https://github.com/githiago-f.png"
-					height="120"
-					alt="profile pic"
-					className="rounded-circle"
-				/>
-				<div className="py-3">
-					<div className="py-3">
-						<Subtitle>Thiago Farias</Subtitle>
-						<a href="https://github.com/githiago-f" target="_blanck">@githiago-f</a>
-					</div>
+    return (
+        <SideBarContainer>
+            <div className="pt-5 p-2 text-center">
+                <img
+                    src="https://github.com/githiago-f.png"
+                    height="120"
+                    alt="profile pic"
+                    className="rounded-circle"
+                />
+                <div className="py-3">
+                    <div className="py-3">
+                        <Subtitle>Thiago Farias</Subtitle>
+                        <a href="https://github.com/githiago-f" target="_blanck">@githiago-f</a>
+                    </div>
 
-				</div>
-			</div>
-			<div className="p-2">
-				<Description>
-					<p className="text-left">
-						<ReactMarkdown source={readme}/>
-					</p>
-				</Description>
-			</div>
-		</SideBarContainer>
-	);
+                </div>
+            </div>
+            <div className="p-2">
+                <Description>
+                    <p className="text-left">
+                        <ReactMarkdown source={readme}/>
+                    </p>
+                </Description>
+            </div>
+        </SideBarContainer>
+    );
 };

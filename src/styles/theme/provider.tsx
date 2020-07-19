@@ -19,27 +19,27 @@ const GlobalStyle = createGlobalStyle<{darkThemeOn: boolean}>`
 
 export const Provider: React.FC<Base> = (props) => {
 
-	const [darkTheme, setDarkTheme] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(false);
 
-	useEffect(() => {
-		if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			setDarkTheme(true);
-		}
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-			if(e.matches) {
-				setDarkTheme(true);
-			} else {
-				setDarkTheme(false);
-			}
-		});
-	}, []);
+    useEffect(() => {
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDarkTheme(true);
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if(e.matches) {
+                setDarkTheme(true);
+            } else {
+                setDarkTheme(false);
+            }
+        });
+    }, []);
 
-	return (
-		<>
-			<ThemeProvider theme={{...constants, darkThemeOn: darkTheme}}>
-				{props?.children}
-				<GlobalStyle darkThemeOn={darkTheme} />
-			</ThemeProvider>
-		</>
-	);
+    return (
+        <>
+            <ThemeProvider theme={{...constants, darkThemeOn: darkTheme}}>
+                {props?.children}
+                <GlobalStyle darkThemeOn={darkTheme} />
+            </ThemeProvider>
+        </>
+    );
 };

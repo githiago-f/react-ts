@@ -6,14 +6,14 @@ import { Content } from 'styles/Content';
 import { PageContent } from 'styles/Page';
 
 export const Template: React.FC<Base> = (props) => {
-	return(
-		<Container>
-			<SideBar/>
-			<Content>
-				<PageContent>
-					{props?.children}
-				</PageContent>
-			</Content>
-		</Container>
-	);
+    return(
+        <Container>
+            <SideBar/>
+            <Content>
+                <PageContent>
+                    {props?.children}
+                </PageContent>
+            </Content>
+        </Container>
+    );
 };
