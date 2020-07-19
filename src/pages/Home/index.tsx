@@ -9,35 +9,35 @@ import { Base } from 'types/props';
 import { Description } from 'styles/SideBar/SideBar';
 
 export const Home: FC<Base<{}>> = () => {
-	const [cards, setCards] = useState([] as TCard[]);
+    const [cards, setCards] = useState([] as TCard[]);
 
-	useEffect(() => {
-		getRepos().then(data => {
-			const myCards = data.map(card => ({
-                        lang: card.language.toLowerCase().trim(),
-                        description: card.description,
-                        title: card.name,
-                        href: card.html_url
-                    })
-                ) as TCard[];
-			setCards(myCards);
-		});
-	}, []);
+    useEffect(() => {
+        getRepos().then(data => {
+            const myCards = data.map(card => ({
+                lang: card.language.toLowerCase().trim(),
+                description: card.description,
+                title: card.name,
+                href: card.html_url
+            })
+            ) as TCard[];
+            setCards(myCards);
+        });
+    }, []);
 
-	return (
-		<Template>
-			<Title>Meus projetos</Title>
-			<Row>
+    return (
+        <Template>
+            <Title>Meus projetos</Title>
+            <Row>
                 {cards.map((i, id)=> <CardProject key={id} {...i} />)}
-			</Row>
-			<Description>
-				<p>
+            </Row>
+            <Description>
+                <p>
                     Icons made by{' '}
-					<a href="https://creativemarket.com/Becris" title="Becris">Becris</a>{' '}
+                    <a href="https://creativemarket.com/Becris" title="Becris">Becris</a>{' '}
                     from{' '}
-					<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-				</p>
-			</Description>
-		</Template>
-	);
+                    <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </p>
+            </Description>
+        </Template>
+    );
 };
