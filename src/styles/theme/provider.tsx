@@ -19,9 +19,12 @@ const GlobalStyle = createGlobalStyle<{darkThemeOn: boolean}>`
 
 export const Provider: React.FC<Base> = (props) => {
 
-	const [darkTheme, setDarkTheme] = useState(true);
+	const [darkTheme, setDarkTheme] = useState(false);
 
 	useEffect(() => {
+		if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setDarkTheme(true);
+		}
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
 			if(e.matches) {
 				setDarkTheme(true);

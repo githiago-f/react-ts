@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import assets from 'assets';
 import { Base } from 'types/props';
@@ -38,7 +38,7 @@ const Button = styled.a.attrs({
     float: right;
 `;
 
-export const CardProject: FC<Base<TCard>> = (props) => {
+export const CardProject = (props: Base<TCard>) => {
 	const [file, setFile] = useState(assets['default']);
 
 	useEffect(()=> {
@@ -52,7 +52,7 @@ export const CardProject: FC<Base<TCard>> = (props) => {
 
 	return (
 		<Card>
-			<CardImage height="267" width="400" src={file} alt={props.title + ' - ' + props.lang}/>
+			<CardImage className="img-fluid" src={file} alt={props.title + ' - ' + props.lang}/>
 			<CardBody>
 				<Subtitle>{props.title}</Subtitle>
 				<p style={{maxWidth: 380 }}>

@@ -5,15 +5,15 @@ import { loadReadme } from 'service/github.api';
 import ReactMarkdown from 'react-markdown';
 
 export const SideBar = () => {
-    const [readme, setReadme] = useState('')
+	const [readme, setReadme] = useState('');
 
-    useEffect(()=> {
-        loadReadme().then(setReadme).catch(console.error)
-    }, [])
+	useEffect(()=> {
+		loadReadme().then(setReadme).catch(console.error);
+	}, []);
 
 	return (
 		<SideBarContainer>
-			<div className="pt-5 p-2">
+			<div className="pt-5 p-2 text-center">
 				<img
 					src="https://github.com/githiago-f.png"
 					height="120"
@@ -25,12 +25,15 @@ export const SideBar = () => {
 						<Subtitle>Thiago Farias</Subtitle>
 						<a href="https://github.com/githiago-f" target="_blanck">@githiago-f</a>
 					</div>
-					<Description>
-						<p className="text-left">
-                            <ReactMarkdown source={readme}/>
-						</p>
-					</Description>
+
 				</div>
+			</div>
+			<div className="p-2">
+				<Description>
+					<p className="text-left">
+						<ReactMarkdown source={readme}/>
+					</p>
+				</Description>
 			</div>
 		</SideBarContainer>
 	);

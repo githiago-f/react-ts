@@ -8,14 +8,12 @@ import { PageContent } from 'styles/Page';
 export const Template: React.FC<Base> = (props) => {
 	return(
 		<Container>
-            <div className="row">
-                <SideBar/>
-                <Content>
-                    <PageContent>
-                        {props?.children}
-                    </PageContent>
-                </Content>
-            </div>
+			<SideBar/>
+			<Content>
+				<PageContent>
+					{props?.children}
+				</PageContent>
+			</Content>
 		</Container>
 	);
 };

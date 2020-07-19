@@ -6,4 +6,4 @@ export const Row = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-`
+`;
