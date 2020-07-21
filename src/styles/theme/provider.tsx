@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle<{darkThemeOn: boolean}>`
     .bg-darker {
         background-color: ${props => props.darkThemeOn ? bg.dark : 'white'};
     }
-    p, li, span, h3 {
+    p, li, span, h3, h4 {
         color: ${props => props.darkThemeOn ? font.dark : font.light};
     }
 `;
