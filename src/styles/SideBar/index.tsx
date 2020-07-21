@@ -30,9 +30,7 @@ export const SideBar = () => {
             </div>
             <div className="p-2">
                 <Description>
-                    <p className="text-left">
-                        <ReactMarkdown source={readme}/>
-                    </p>
+                    <ReactMarkdown source={readme}/>
                 </Description>
             </div>
         </SideBarContainer>

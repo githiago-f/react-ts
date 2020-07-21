@@ -14,5 +14,5 @@ export const Content = styled.div.attrs({
     padding-bottom: 3rem;
     position: relative;
     overflow: auto;
-    width: 70vw;
+    width: 75vw;
 `;
