@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { SideBarContainer } from './SideBar';
 import {Subtitle} from './../Title';
-import { loadReadme } from 'service/github.api';
+// import { loadReadme } from 'service/github.api';
 
 export const SideBar = () => {
-    const [readme, setReadme] = useState('');
+    // const [readme, setReadme] = useState('');
 
-    useEffect(()=> {
-        loadReadme().then(setReadme).catch(console.error);
-    }, []);
+    // useEffect(()=> {
+    //     loadReadme().then(setReadme).catch(console.error);
+    // }, []);
 
     return (
         <SideBarContainer>
