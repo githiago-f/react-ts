@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { SideBarContainer, Description } from './SideBar';
+import { SideBarContainer } from './SideBar';
 import {Subtitle} from './../Title';
 import { loadReadme } from 'service/github.api';
-import ReactMarkdown from 'react-markdown';
 
 export const SideBar = () => {
     const [readme, setReadme] = useState('');
@@ -29,9 +28,9 @@ export const SideBar = () => {
                 </div>
             </div>
             <div className="p-2">
-                <Description>
+                {/* <Description>
                     <ReactMarkdown source={readme}/>
-                </Description>
+                </Description> */}
             </div>
         </SideBarContainer>
     );
