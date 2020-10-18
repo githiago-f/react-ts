@@ -1,20 +1,16 @@
 import React from 'react';
 import { SideBarContainer } from './SideBar';
 import {Subtitle} from './../Title';
-// import { loadReadme } from 'service/github.api';
+import { useSideBarHooks } from './hooks';
 
 export const SideBar = () => {
-    // const [readme, setReadme] = useState('');
-
-    // useEffect(()=> {
-    //     loadReadme().then(setReadme).catch(console.error);
-    // }, []);
+    const { profileLink, userName } = useSideBarHooks();
 
     return (
         <SideBarContainer>
             <div className="pt-5 p-2 text-center">
                 <img
-                    src="https://github.com/githiago-f.png"
+                    src={`https://github.com/${userName}.png`}
                     height="120"
                     alt="profile pic"
                     className="rounded-circle"
@@ -22,15 +18,10 @@ export const SideBar = () => {
                 <div className="py-3">
                     <div className="py-3">
                         <Subtitle>Thiago Farias</Subtitle>
-                        <a href="https://github.com/githiago-f" target="_blanck">@githiago-f</a>
+                        <a href={profileLink} target="_blanck">@githiago-f</a>
                     </div>
 
                 </div>
-            </div>
-            <div className="p-2">
-                {/* <Description>
-                    <ReactMarkdown source={readme}/>
-                </Description> */}
             </div>
         </SideBarContainer>
     );

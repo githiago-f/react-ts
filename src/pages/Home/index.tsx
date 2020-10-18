@@ -1,32 +1,23 @@
-import React, { useState, useEffect, FC } from 'react';
+import React from 'react';
 import { Template } from 'styles/theme/Template';
 import { Title } from 'styles/Title';
 import { CardProject } from 'styles/Card';
 import { Row } from 'styles/Row';
-import { TCard } from 'types/cards';
-import { getRepos } from 'service/github.api';
-import { Base } from 'types/props';
 import { Description } from 'styles/SideBar/SideBar';
+import { useHomeHooks } from './hooks';
+import ReactMarkdown from 'react-markdown';
 
-export const Home: FC<Base<{}>> = () => {
-    const [cards, setCards] = useState([] as TCard[]);
-
-    useEffect(() => {
-        getRepos().then(data => {
-            const myCards = data.map(card => ({
-                lang: card.language.toLowerCase().trim(),
-                description: card.description,
-                title: card.name,
-                href: card.html_url
-            })
-            ) as TCard[];
-            setCards(myCards);
-        });
-    }, []);
+export const Home = () => {
+    const { cards, markdown } = useHomeHooks();
 
     return (
         <Template>
-            <Title>Meus projetos</Title>
+            <Description>
+                <ReactMarkdown source={markdown}/>
+            </Description>
+            <div className="py-5">
+                <Title>Meus projetos</Title>
+            </div>
             <Row>
                 {cards.map((i, id)=> <CardProject key={id} {...i} />)}
             </Row>

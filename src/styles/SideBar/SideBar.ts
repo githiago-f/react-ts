@@ -16,6 +16,6 @@ export const SideBarContainer = styled.div<ThemeProps>`
 export const Description = styled.div.attrs({
     className: 'card card-body'
 })<ThemeProps>`
-    background-color: ${props => props.theme.darkThemeOn ? props.theme.theme.bg.dark : '#fff'};
+    background-color: ${props => props.theme.darkThemeOn ? '#343a40' : '#fff'};
     overflow-y: auto;
 `;

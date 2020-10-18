@@ -9,8 +9,12 @@ const GlobalStyle = createGlobalStyle<{darkThemeOn: boolean}>`
     .bg-darker {
         background-color: ${props => props.darkThemeOn ? bg.dark : 'white'};
     }
-    p, li, span, h3, h4 {
+    p, li, span, h3, h4, h2 {
         color: ${props => props.darkThemeOn ? font.dark : font.light};
+    }
+    img[alt="BANNER"] {
+        width: 100%;
+        height: auto;
     }
 `;
 
