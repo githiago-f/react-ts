@@ -1,7 +1,7 @@
 import { TCardGit } from 'types/cards';
 
 export const getAuthor = async () => {
-    const pack = await import('./../../package.json');
+    const pack = await import('./../assets/config.json');
     return pack.author
 }
 
