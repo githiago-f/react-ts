@@ -1,4 +1,4 @@
-[![Travis CI](https://travis-ci.com/githiago-f/react-ts.svg?branch=master)](https://travis-ci.com/githiago-f/react-ts.svg?branch=master)
+[![Travis CI](https://travis-ci.com/githiago-f/portfolio.svg?branch=master)](https://travis-ci.com/githiago-f/portfolio.svg?branch=master)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
